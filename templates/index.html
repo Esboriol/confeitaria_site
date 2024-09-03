@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sempre Doce - Confeitaria</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Sempre Doce</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('inicial') }}">Home</a></li>
+                <li><a href="{{ url_for('cardapio') }}">Cardapio</a></li>
+                <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('contato') }}">Contato</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <section id="home" class="hero-section">
+        <h2>Bem-vindo à Sempre Doce!</h2>
+        <p>Delícias irresistíveis para adoçar o seu dia.</p>
+    </section>
+    <section id="cardapio" class="section">
+        <h2>Doces Famosos</h2>
+        <p>Explore os nossos pratos mais famosos e deliciosos.</p>
+        <div class="cardapio-container">
+            <div class="cardapio-item">
+                <img src="{{ url_for('static', filename='img/bolo.jpg') }}" alt="Bolo de Chocolate">
+                <h3>Bolo de Fumo</h3>
+                <p>Delicioso bolo de fumo sem cobertura.</p>
+            </div>
+            <div class="cardapio-item">
+                <img src="{{ url_for('static', filename='img/brigadeiro.jpg') }}" alt="Cheesecake">
+                <h3>Brigadeiro</h3>
+                <p>Clássico brigadeiro com chocolate de alta qualidade.</p>
+            </div>
+            <div class="cardapio-item">
+                <img src="{{ url_for('static', filename='img/milkshake.jpg') }}" alt="Brigadeiro">
+                <h3>Milkshake</h3>
+                <p>Milkshake gostoso</p>
+            </div>
+            <!-- Adicione mais itens conforme necessário -->
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Sempre Doce. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

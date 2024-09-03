@@ -1,0 +1,206 @@
+/* Reset básico para garantir um estilo consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Estilo do Header e Navbar */
+header {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #FF00FF; /* Cor da fonte (ex: rosa) */
+    font-family: 'Roboto', sans-serif; /* Fonte da logo */
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    background-color: #4CAF50; /* Cor verde para o hover */
+    border-radius: 5px;
+}
+
+/* Menu Toggle para dispositivos móveis */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+    margin: 3px 0;
+}
+
+/* Seção Hero */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Ajuste a altura conforme necessário */
+    background-color: #FF6EB4; /* Cor de fundo rosa claro */
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Sobreposição de cor */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Sobreposição preta semi-transparente */
+    z-index: 1;
+}
+
+.hero-section h2, .hero-section p {
+    background: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para melhor leitura */
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+}
+
+/* Seções Gerais */
+.section {
+    padding: 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.section p {
+    font-size: 1.1em;
+}
+
+/* Estilo do Cardápio */
+.cardapio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.cardapio-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+}
+
+.cardapio-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.cardapio-item h3 {
+    margin: 10px 0;
+    color: #FF00FF; /* Cor rosa para o título */
+}
+
+.cardapio-item p {
+    color: #666;
+}
+
+/* Estilo do Footer */
+footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    font-size: 0.9em;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #f8f9fa;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero-section h2 {
+        font-size: 2em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .section h2 {
+        font-size: 1.5em;
+    }
+
+    .section p {
+        font-size: 1em;
+    }
+}
